@@ -33,4 +33,6 @@ Has a gui. Right hand pane is the template to use. It has three variables: capti
 
 Left hand pane is the caption. 
 
+![Editor](demo-image.jpg)
+
 hit enter or click add to skip to the next image
