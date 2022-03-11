@@ -11,6 +11,12 @@ dist/captioner
 
 If you're on Mac or Windows then alternatively you can run the python script by installing the prerequisites and running it with
 
+
+Non developer mac. In terminal ( after enabled developer python ) run
+```
+sudo python3 -m pip install -r requirements.txt
+```
+
 ```
 python3 -m pip install pysimplegui
 python3 captioner.py
