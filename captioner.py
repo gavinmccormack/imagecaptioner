@@ -6,6 +6,7 @@ from PIL import Image
 
 file_types = [("JPEG (*.jpg)", "*.jpg", "*.png"),
               ("All files (*.*)", "*.*")]
+
 def main():
     # Get list of images
     imgs = []
@@ -40,21 +41,22 @@ def main():
 
     image_section = sg.Image(key="-IMAGE-")
     layout = [
-        [sg.Text("%s of %s" % (count,number_of_images), key="Image-Count")],
+        [sg.Text("%s of %s" % (count,number_of_images), font="Helvetica", key="Image-Count")],
         [sg.Column([[image_section]], justification='center')],
         [sg.Text("Input a caption"), 
-         sg.Multiline(size=(60, 10), key='-MLINE-',enter_submits=True,do_not_clear=False, pad=(0, (15, 0)) ),
-         sg.Multiline(size=(60, 10), key='-MLINE2-',enter_submits=True,do_not_clear=True, pad=(0, (15, 0)) ),
+         sg.Multiline(size=(60, 10),  key='-MLINE-',font="Helvetica",enter_submits=True,do_not_clear=False, pad=(20, (15, 20)) ),
+         sg.Multiline(size=(60, 10),  key='-MLINE2-', font="Helvetica", enter_submits=True,do_not_clear=True, pad=(20, (15, 20)) ),
          sg.Button("Add",pad=(0, (15, 0)))],
     ]
-    window = sg.Window("Captions! CAPTIONS! CAPTIONSSSSS!", layout, finalize=True)
+    window = sg.Window("Captions! CAPTIONS! CAPTIONSSSSS!", layout, margins=(20,20), finalize=True)
     window['-MLINE-'].bind("<Return>", "_Enter")
     window['-MLINE2-'].update(latex_template)
+
     while True:
         filename = imgs.pop() # This crashes the program when finished. But like, a cool crash.
         if os.path.exists(filename):
             image = Image.open(filename)
-            image.thumbnail((1200, 1200))
+            image.thumbnail((700, 700)) # If image is too big other sections may not display
             bio = io.BytesIO()
             image.save(bio, format="PNG")
             window["-IMAGE-"].update(data=bio.getvalue())
