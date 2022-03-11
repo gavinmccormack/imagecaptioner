@@ -2,3 +2,5 @@ __pycache__
 outputs.tex
 build/**
 caption_env/**
+textput.log
+*.log
