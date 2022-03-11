@@ -1,6 +1,6 @@
-# "How can I caption and template a folder of images quickly in latex"
+# "How can I caption and template a folder of images quickly in latex?"
 
-Quick tool 
+Quick tool for one specific person
 
 There is a runnable binary at
 
