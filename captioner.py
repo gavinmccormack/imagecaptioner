@@ -24,7 +24,7 @@ LATEX_TEMPLATE = """
 """
 
 
-PATH = os.getcwd()  # NB: Probably needs amending to be target dir.
+PATH = os.getcwd() 
 TARGET_PATH = os.path.join(PATH, "put-images-here")
 
 
