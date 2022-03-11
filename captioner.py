@@ -22,6 +22,7 @@ def main():
 \\end{figure}
             """
 
+    sg.theme('DarkTeal9')
     if not os.path.exists(target_path):
         os.mkdir(target_path)
     valid_images = [".jpg",".gif",".png",".tga"]
@@ -67,7 +68,7 @@ def main():
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
 
-        if event == "-MLINE-_Enter":
+        if event == "-MLINE-_Enter" or event == "Add":
             caption = values['-MLINE-']
 
             filename_without_ext = os.path.basename(filename).split('.')[0]

@@ -12,10 +12,12 @@ dist/captioner
 Alternatively you can run the python script by installing the prerequisites and running it with
 
 ```
+python3 -m pip install pysimplegui
 python3 captioner.py
 
 ```
 
+Assuming python3 is installed
 # Build
 
 Builds into a binary with pyinstaller
